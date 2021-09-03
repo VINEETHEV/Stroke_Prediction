@@ -16,7 +16,7 @@ def run():
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Describe features", "Upload csv"))
-    st.sidebar.info('This app is created for stroke predition using several features')
+    st.sidebar.info('This app is created for stroke prediction using several features')
     st.title("Stroke Prediction")
     if add_selectbox == 'Describe features':
         gender=st.number_input('gender(Male:1,Female:0)' , min_value=0, max_value=1, value=1)
