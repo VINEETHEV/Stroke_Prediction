@@ -18,7 +18,7 @@ def run():
     ("Describe features", "Upload csv"))
     st.sidebar.info('This app is created for stroke predition using several features')
     st.title("Stroke Prediction")
-    if add_selectbox == 'Online':
+    if add_selectbox == 'Describe features':
         gender=st.number_input('gender(Male:1,Female:0)' , min_value=0, max_value=1, value=1)
         age =st.number_input('age',min_value=0, max_value=82, value=1)
         hypertension = st.number_input('hypertension', min_value=0, max_value=1, value=1)
@@ -36,7 +36,7 @@ def run():
             output = predict(model=model, input_df=input_df)
             output = str(output)
         st.success('The output is {}'.format(output))
-    if add_selectbox == 'Batch':
+    if add_selectbox == 'Upload csv':
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
             data = pd.read_csv(file_upload)            
